@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub RU Translator",
+  "description": "Переводит ключевые элементы интерфейса GitHub на русский язык.",
+  "version": "1.0.0",
+  "permissions": ["storage"],
+  "host_permissions": ["https://github.com/*"],
+  "action": {
+    "default_title": "GitHub RU Translator",
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["src/translations.js", "src/content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
